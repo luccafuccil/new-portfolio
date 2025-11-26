@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Lucca Fucci | Desenvolvedor</title>
+  </head>
+  <body>
+    <div class="spotlight-overlay"></div>
+    <section class="section" id="hero">
+      <ul class="tech-list">
+        <li data-lang="hero.technologies.tech1" class="tech-item"></li>
+        <li data-lang="hero.technologies.tech2" class="tech-item"></li>
+        <li data-lang="hero.technologies.tech3" class="tech-item"></li>
+        <li data-lang="hero.technologies.tech4" class="tech-item"></li>
+        <li data-lang="hero.technologies.tech5" class="tech-item"></li>
+        <li data-lang="hero.technologies.tech6" class="tech-item"></li>
+        <li data-lang="hero.technologies.tech7" class="tech-item"></li>
+        <li data-lang="hero.technologies.tech8" class="tech-item"></li>
+      </ul>
+      <div class="hero-greeting">
+        <h1 data-lang="hero.name" class="hero-name"></h1>
+        <p data-lang="hero.description" class="hero-description"></p>
+        <ul class="social-icon-list">
+          <button
+            id="copyEmailBtn"
+            onclick="copyEmailToClipboard()"
+            class="social-link"
+            title="Copiar e-mail"
+          >
+            <img
+              id="copyEmailIcon"
+              src="./assets/copy.png"
+              alt="email"
+              class="social-icon"
+            />
+          </button>
+          <a
+            href="https://www.linkedin.com/in/lucca-fucci/"
+            class="social-link"
+            target="_blank"
+            ><img
+              src="./assets/linkedin.png"
+              alt="linkedin"
+              class="social-icon"
+          /></a>
+          <a
+            href="https://github.com/luccafuccil"
+            class="social-link"
+            target="_blank"
+            ><img src="./assets/github.png" alt="github" class="social-icon"
+          /></a>
+        </ul>
+        <div class="avatar-section">
+          <img
+            src="./assets/avatar.png"
+            alt="Picture of Lucca"
+            class="avatar"
+          />
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <p data-lang="footer.rights" class="footer-text"></p>
+      <div class="lang-switch" id="langSwitch">
+        <button
+          class="lang-option"
+          data-lang-option="pt-BR"
+          aria-label="Português"
+        >
+          PT
+        </button>
+        <button class="lang-option" data-lang-option="en" aria-label="English">
+          EN
+        </button>
+      </div>
+    </footer>
+    <script src="./scripts/lang.js"></script>
+    <script src="./scripts/spotlight.js"></script>
+    <script src="./scripts/copyMail.js"></script>
+  </body>
+</html>

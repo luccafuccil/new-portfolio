@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Lucca Fucci | Front-end Developer"
+  },
+  "hero": {
+    "name": "Lucca Fucci,",
+    "description": "Passionate about code,\ngiving life to amazing experiences.",
+    "technologies": {
+      "tech1": "JavaScript,",
+      "tech2": "React,",
+      "tech3": "Node.js,",
+      "tech4": "HTML5,",
+      "tech5": "CSS3,",
+      "tech6": "TypeScript,",
+      "tech7": "Next.js,",
+      "tech8": "Tailwind CSS"
+    },
+    "cta": "View Projects"
+  },
+  "about": {
+    "title": "Who am I?",
+    "description": "I am a developer with a degree in Film and a passion for the art of digital experience. I love art and development and I think the two go hand in hand."
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View Project",
+    "sourceCode": "Source Code"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I work with"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

@@ -1,0 +1,269 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 32px 32px 0 32px;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Custom Properties */
+:root {
+  --background-color: #f2e9e4;
+  --text-color: #03045e;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.spotlight-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/background.jpg");
+  background-size: 105vw;
+  background-position: center;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask-image: radial-gradient(
+    circle 200px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    black 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle 200px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    black 0%,
+    transparent 100%
+  );
+}
+
+.lang-switch {
+  z-index: 10;
+  display: flex;
+  gap: 0;
+}
+
+.lang-option {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--text-color);
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-option:first-child {
+  border-right: none;
+}
+
+.lang-option.active {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.lang-option:not(.active):hover {
+  opacity: 0.7;
+}
+
+#hero {
+  display: flex;
+  justify-content: space-between;
+  max-height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 32px;
+  padding-top: 16px;
+}
+
+.hero-name {
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1;
+}
+
+.hero-description {
+  margin-top: 4px;
+  font-weight: 500;
+  font-size: 24px;
+  white-space: pre-line;
+  text-align: right;
+}
+
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 32px;
+}
+
+.tech-item {
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1.4;
+}
+
+.avatar {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  padding-top: 16px;
+  padding-left: 16px;
+  background-color: var(--text-color);
+}
+
+.social-icon-list {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.social-link {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) saturate(100%) invert(8%) sepia(92%) saturate(5574%)
+    hue-rotate(242deg) brightness(80%) contrast(150%);
+  &:hover {
+    filter: brightness(0) saturate(100%) invert(35%) sepia(100%) saturate(7491%)
+      hue-rotate(203deg) brightness(60%) contrast(105%);
+  }
+}
+
+.explosion-line {
+  position: absolute;
+  width: 4px;
+  height: 0;
+  background-color: var(--text-color);
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  pointer-events: none;
+}
+
+.explosion-line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background-color: var(--text-color);
+  animation: explode 0.6s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
+    height: 0px;
+    opacity: 1;
+  }
+  100% {
+    height: 30px;
+    opacity: 0;
+  }
+}
+
+.avatar-section {
+  position: absolute;
+  bottom: 16px;
+  right: 32px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #e8ddd8;
+  padding: 4px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.footer-text {
+  font-size: 12px;
+  margin-left: 4px;
+}
