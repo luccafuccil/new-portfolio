@@ -7,6 +7,15 @@
   padding: 0;
 }
 
+/* Custom Font */
+@font-face {
+  font-family: "Sk-Modernist";
+  src: url("../assets/fonts/Sk-Modernist-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   font-size: 100%;
 }
@@ -70,7 +79,7 @@ button {
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: "Manrope", sans-serif;
+  font-family: "Sk-Modernist", sans-serif;
   font-optical-sizing: auto;
   position: relative;
   overflow-x: hidden;
