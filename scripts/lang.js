@@ -32,7 +32,9 @@ function updateContent(data) {
   }
 
   // Dispatch custom event for other components
-  window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: currentLang, data } }));
+  window.dispatchEvent(
+    new CustomEvent("languageChanged", { detail: { lang: currentLang, data } })
+  );
 }
 
 function loadLanguage(lang) {
