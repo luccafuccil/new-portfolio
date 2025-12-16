@@ -22,6 +22,13 @@
       <div class="hero-greeting">
         <h1 data-lang="hero.name" class="hero-name"></h1>
         <p data-lang="hero.description" class="hero-description"></p>
+        <button
+          class="projects-nav-btn"
+          onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})"
+        >
+          <span data-lang="hero.cta" class="projects-nav-text"></span>
+          <span class="projects-nav-arrow">↓</span>
+        </button>
         <ul class="social-icon-list">
           <button
             id="copyEmailBtn"
@@ -61,6 +68,11 @@
         </div>
       </div>
     </section>
+    <section class="section" id="projects">
+      <div class="projects-container" id="projectsContainer">
+        <!-- Projects will be dynamically loaded here -->
+      </div>
+    </section>
     <footer class="footer">
       <p data-lang="footer.rights" class="footer-text"></p>
       <div class="lang-switch" id="langSwitch">
@@ -77,8 +89,10 @@
       </div>
     </footer>
     <script src="./scripts/lang.js"></script>
+    <script src="./scripts/projects.js"></script>
     <script src="./scripts/spotlight.js"></script>
     <script src="./scripts/copyMail.js"></script>
     <script src="./scripts/mobile-interactions.js"></script>
+    <script src="./scripts/projects-scroll.js"></script>
   </body>
 </html>

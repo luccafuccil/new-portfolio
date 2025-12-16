@@ -26,6 +26,13 @@ function updateContent(data) {
       btn.classList.remove("active");
     }
   });
+
+  if (typeof window.renderProjects === "function") {
+    window.renderProjects(data);
+  }
+
+  // Dispatch custom event for other components
+  window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: currentLang, data } }));
 }
 
 function loadLanguage(lang) {

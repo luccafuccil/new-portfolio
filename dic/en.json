@@ -26,6 +26,32 @@
     "viewProject": "View Project",
     "sourceCode": "Source Code"
   },
+  "projectList": [
+    {
+      "name": "nbk Pulse",
+      "description": "Marketing management and social media administration platform focused on restaurants, fully integrated with Instagram, WhatsApp and AI tools. Built with Vite, React, Node, Tailwind CSS, AWS, GCR and Docker.",
+      "picture": [
+        "./assets/projects/projeto-foto-1.png",
+        "./assets/projects/projeto-foto-4.png",
+        "./assets/projects/projeto-foto-5.png",
+        "./assets/projects/projeto-foto-6.png",
+        "./assets/projects/projeto-foto-3.png",
+        "./assets/projects/projeto-foto-2.png"
+      ]
+    },
+    {
+      "name": "Filmic",
+      "description": "Windows application for organizing, cataloging and playing movies with an elegant and modern interface, which finds thumbnails using ffmpeg and automatically integrates with the TMDB API for information. Built with Electron, React, Node.js and Github Releases.",
+      "picture": [
+        "./assets/projects/projeto-2-foto-1.png",
+        "./assets/projects/projeto-2-foto-2.png",
+        "./assets/projects/projeto-2-foto-3.png",
+        "./assets/projects/projeto-2-foto-4.png"
+      ],
+      "github": "https://github.com/luccafuccil/filmic/releases/download/v1.2.2/Filmic-Setup-1.2.2.exe",
+      "githubLabel": "Download"
+    }
+  ],
   "skills": {
     "title": "Skills",
     "subtitle": "Technologies I work with"

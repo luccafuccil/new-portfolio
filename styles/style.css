@@ -83,6 +83,7 @@ body {
   font-optical-sizing: auto;
   position: relative;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .spotlight-overlay {
@@ -173,6 +174,35 @@ body {
   text-align: right;
 }
 
+.projects-nav-btn {
+  margin-top: 24px;
+  padding: 12px 24px;
+  border: 2px solid var(--text-color);
+  background-color: transparent;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.projects-nav-btn:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.projects-nav-arrow {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.projects-nav-btn:hover .projects-nav-arrow {
+  transform: translateY(3px);
+}
+
 .tech-list {
   display: flex;
   flex-direction: column;
@@ -257,6 +287,219 @@ body {
   position: absolute;
   bottom: 16px;
   right: 32px;
+}
+
+/* Projects Section */
+#projects {
+  min-height: 100vh;
+  padding: 80px 32px;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#projects.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card:nth-child(even) {
+  direction: rtl;
+}
+
+.project-card:nth-child(even) > * {
+  direction: ltr;
+}
+
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1559 / 908;
+  overflow: hidden;
+  border: 2px solid var(--text-color);
+  background-color: var(--text-color);
+}
+
+.project-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.project-image.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--background-color);
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0.9;
+}
+
+.carousel-btn:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  opacity: 1;
+}
+
+.carousel-btn-prev {
+  left: 16px;
+}
+
+.carousel-btn-next {
+  right: 16px;
+}
+
+.carousel-arrow {
+  font-size: 18px;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -2px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.carousel-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  border: 2px solid var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.carousel-indicator.active {
+  background-color: var(--text-color);
+  opacity: 1;
+}
+
+.carousel-indicator:hover {
+  opacity: 1;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-name {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.project-description {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.project-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  padding: 12px 24px;
+  border: 2px solid var(--text-color);
+  background-color: transparent;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.project-link:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.project-link-secondary {
+  border-style: dashed;
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover .link-arrow {
+  transform: translateX(4px);
 }
 
 .footer {
@@ -422,9 +665,22 @@ body {
     align-self: flex-start;
   }
 
-  .social-icon-list {
+  .projects-nav-btn {
     order: 4;
-    margin: 28px 0 32px 0;
+    margin: 24px auto 16px;
+    align-self: center;
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+
+  .projects-nav-btn:active {
+    transform: scale(0.92);
+    transition: transform 0.05s ease;
+  }
+
+  .social-icon-list {
+    order: 5;
+    margin: 16px 0 32px 0;
     gap: 18px;
     padding-left: 2px;
     align-self: center;
@@ -455,7 +711,7 @@ body {
     position: relative;
     bottom: auto;
     right: auto;
-    order: 5;
+    order: 6;
     margin-top: 36px;
     margin-bottom: 36px;
     width: 100%;
@@ -543,5 +799,86 @@ body {
   .tech-item:active {
     transform: scale(1.08) rotate(var(--rotation, 0deg));
     transition: transform 0.1s ease;
+  }
+
+  /* Projects Mobile */
+  #projects {
+    padding: 60px 20px 80px;
+  }
+
+  .projects-container {
+    gap: 64px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-card:nth-child(even) {
+    direction: ltr;
+  }
+
+  .project-image-wrapper {
+    aspect-ratio: 4 / 3;
+    border-width: 2px;
+  }
+
+  .project-name {
+    font-size: clamp(28px, 8vw, 36px);
+    font-weight: 700;
+  }
+
+  .project-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .project-link {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .project-link:active {
+    transform: scale(0.96);
+    transition: transform 0.05s ease;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-btn-prev {
+    left: 12px;
+  }
+
+  .carousel-btn-next {
+    right: 12px;
+  }
+
+  .carousel-arrow {
+    font-size: 18px;
+  }
+
+  .carousel-btn:active {
+    transform: translateY(-50%) scale(0.9);
+  }
+
+  .carousel-indicators {
+    bottom: 12px;
+    gap: 6px;
+  }
+
+  .carousel-indicator {
+    width: 7px;
+    height: 7px;
   }
 }
