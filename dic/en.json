@@ -28,7 +28,7 @@
   },
   "projectList": [
     {
-      "name": "nbk Pulse",
+      "name": "nbkPULSE",
       "description": "Marketing management and social media administration platform focused on restaurants, fully integrated with Instagram, WhatsApp and AI tools. Built with Vite, React, Node, Tailwind CSS, AWS, GCR and Docker.",
       "picture": [
         "./assets/projects/projeto-foto-1.png",
